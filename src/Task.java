@@ -1,4 +1,4 @@
-public class Task {
+public class Task implements Comparable<Task>{
     private String name;
     private String description;
     private int priority;
@@ -40,5 +40,10 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", priority=" + priority +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return 0;
     }
 }
