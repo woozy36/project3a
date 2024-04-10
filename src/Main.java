@@ -1,16 +1,17 @@
-//joseph momot
+//joseph Momot
 //1660
-//3/8/2024
+//4/10/2024
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
+
 
 public class Main {
     public static void main(String[] args) {
 
         try {
             Scanner input = new Scanner(System.in);
-
 
             ArrayList<Task> myTasks = new ArrayList<>();
 
@@ -77,15 +78,21 @@ public class Main {
 
 
                 } else if (option.equals("4")) {
-                    System.out.println(myTasks);
+                    Collections.sort(myTasks);
+                    for(Task a : myTasks){
+                        System.out.println(a);
+                    }
+
 
                 } else if (option.equals("5")){
                     System.out.println("what priority do you want to display");
-                    int userinput = input.nextInt();
+                    Collections.sort(myTasks);
+                    int userInput = input.nextInt();
                     input.nextLine();
 
+
                     for (int i = 0; i < myTasks.size(); i++) {
-                        if (myTasks.get(i).getPriority() == userinput){
+                        if (myTasks.get(i).getPriority() == userInput){
                             System.out.println(myTasks.get(i));
                         }
                     }
